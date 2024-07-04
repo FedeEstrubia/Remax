@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sample Virtual Tour</title>
+<script type="text/javascript" src="pmvr.js"></script>
+<script type="text/javascript">
+function initialize() {
+  var pmvr=PMVR.bindto("pmvr","FloorPlan","Label");
+  pmvr.start('script.txt');
+  }
+function go(node) {
+  if (document.pmvr) {
+    document.pmvr.set('script','script.txt:'+node);
+    }
+  }
+var prev;
+function pmvrEventHook(action,arg) {
+  if (action=="node") {
+    if (prev) { prev.style.fontWeight='normal'; prev.style.color='#808080'; }
+    var jj = document.getElementById(arg+"Label");
+    if (jj) { prev=jj; jj.style.fontWeight='bold'; jj.style.color='black'; }
+    }
+  else if (action=="preload") {
+    var jj = document.getElementById(arg+"Label");
+    if ((jj)&&(""==jj.style.color)) { jj.style.color='blue'; }
+    }
+  }
+function setDisplay(id,mode) {
+  var jj = document.getElementById(id);
+  if (jj) { jj.style.display = mode; }
+  }
+function goFullScreen() {
+  document.pmvr.set('fullscreen','yes');
+  }
+</script>
+<style type="text/css">
+BODY, TD, P, UL, OL, LI { font-family:Verdana,Arial,Helvetica,sans-serif; font-size:11pt; }
+#Label { font-family:sans-serif; font-size:14pt; background:#F0F0F0; width:100%; text-align:center; } 
+A.nav {color:black;text-decoration:none}
+A.nav:Visited {color:black;}
+A.nav:Active {color:black;}
+A.nav:Hover {color:red;text-decoration:underline}
+</style>
+</head>
+<body  onload="initialize()" background="images/pmvrvirtualtour.gif">
+<center>
+
+<!--Heading-->
+<font size=6>Sample Virtual Tour</font>
+
+<!--Node Navigation Table-->
+<table bgcolor="#F0F0FF" cellpadding=0 cellspacing=0 border=1><tr><td>
+<table><tr>
+  <td><a class=nav href="javascript:go('Dinette')"><span id="DinetteLabel">Dinette</span></a></td><td>&nbsp;</td>
+  <td><a class=nav href="javascript:go('DiningArea')"><span id="DiningAreaLabel">Dining Area</span></a></td><td>&nbsp;</td>
+  <td><a class=nav href="javascript:go('FirstMasterBedroom')"><span id="FirstMasterBedroomLabel">First Master Bedroom</span></a></td><td>&nbsp;</td>
+  <td><a class=nav href="javascript:go('FourthBedroom')"><span id="FourthBedroomLabel">Fourth / Children's Bedroom</span></a></td><td>&nbsp;</td>
+  <td><a class=nav href="javascript:go('Kitchen')"><span id="KitchenLabel">Kitchen</span></a></td><td>&nbsp;</td>
+</tr><tr>
+  <td><a class=nav href="javascript:go('LivingRoom')"><span id="LivingRoomLabel">Living Room</span></a></td><td>&nbsp;</td>
+  <td><a class=nav href="javascript:go('MainEntry')"><span id="MainEntryLabel">Main Entry</span></a></td><td>&nbsp;</td>
+  <td><a class=nav href="javascript:go('OutsidePool')"><span id="OutsidePoolLabel">Outside Pool</span></a></td><td>&nbsp;</td>
+  <td><a class=nav href="javascript:go('SecondMasterBedroom')"><span id="SecondMasterBedroomLabel">Second Master Bedroom</span></a></td><td>&nbsp;</td>
+  <td><a class=nav href="javascript:go('ThirdBedroom')"><span id="ThirdBedroomLabel">Third / Safari Bedroom</span></a></td><td>&nbsp;</td>
+</tr></table>
+</td></tr></table>
+<font size=1><br></font>
+
+<!--PMVR-->
+<table cellpadding=0 cellspacing=0 border=1>
+<tr><td colspan=2><div id="Label"></div></td></tr>
+<tr>
+  <td><div id="pmvr" style="width:650px;height:500px"></div></td>
+  <td><div id="FloorPlan" style="width:250px;height:500px"></div></td>
+</tr></table>
+
+<!--Ending Text-->
+<font size=1 color=gray>Virtual Tour produced by Duckware (R) Virtual Tour Editor 8.4a (build 4064) on 04/07/2024 15:35:04</font>
+<br><br>
+</center>
+</body>
+</html>

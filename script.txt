@@ -1,0 +1,192 @@
+; type=duckware-pmvr-script
+
+[init]
+  scriptHtml=index.html:init
+  script=$THIS:LivingRoom
+
+[OutsidePool]
+  Label.text=The Idyll Mouse -- Outside Pool
+  pmvr.image=images/outsidepool.jpg
+  pmvr.view=360
+  pmvr.pixdeg=0=161,2745=161
+  pmvr.center=2100
+  pmvr.auto=20
+  pmvr.links=$THIS:OutsidePoolLinks
+  FloorPlan.script=$THIS:FirstFloorMap
+  FloorPlan.x=134
+  FloorPlan.y=127
+
+[MainEntry]
+  Label.text=The Idyll Mouse -- Main Entry
+  pmvr.image=images/mainentry.jpg
+  pmvr.view=360
+  pmvr.pixdeg=0=48,2749=48
+  pmvr.center=2591
+  pmvr.auto=20
+  pmvr.links=$THIS:MainEntryLinks
+  FloorPlan.script=$THIS:FirstFloorMap
+  FloorPlan.x=102
+  FloorPlan.y=387
+
+[DiningArea]
+  Label.text=The Idyll Mouse -- Dining Area
+  pmvr.image=images/diningarea.jpg
+  pmvr.view=360
+  pmvr.pixdeg=0=13,2732=13
+  pmvr.center=492
+  pmvr.auto=20
+  pmvr.links=$THIS:DiningAreaLinks
+  FloorPlan.script=$THIS:FirstFloorMap
+  FloorPlan.x=122
+  FloorPlan.y=283
+
+[Kitchen]
+  Label.text=The Idyll Mouse -- Kitchen
+  pmvr.image=images/kitchen.jpg
+  pmvr.view=360
+  pmvr.pixdeg=0=3,2741=3
+  pmvr.center=1443
+  pmvr.auto=20
+  pmvr.links=$THIS:KitchenLinks
+  FloorPlan.script=$THIS:FirstFloorMap
+  FloorPlan.x=215
+  FloorPlan.y=228
+
+[Dinette]
+  Label.text=The Idyll Mouse -- Dinette
+  pmvr.image=images/dinette.jpg
+  pmvr.view=360
+  pmvr.pixdeg=0=272,2755=272
+  pmvr.center=1864
+  pmvr.auto=20
+  pmvr.links=$THIS:DinetteLinks
+  FloorPlan.script=$THIS:FirstFloorMap
+  FloorPlan.x=215
+  FloorPlan.y=193
+
+[LivingRoom]
+  Label.text=The Idyll Mouse -- Living Room
+  pmvr.image=images/livingroom.jpg#2755x500
+  pmvr.view=360
+  pmvr.pixdeg=0=201,2755=201
+  pmvr.center=1065
+  pmvr.auto=20
+  pmvr.links=$THIS:LivingRoomLinks
+  FloorPlan.script=$THIS:FirstFloorMap
+  FloorPlan.x=141
+  FloorPlan.y=229
+
+[FirstMasterBedroom]
+  Label.text=The Idyll Mouse -- First Master Bedroom
+  pmvr.image=images/firstmasterbedroom.jpg
+  pmvr.view=360
+  pmvr.pixdeg=0=198,2722=198
+  pmvr.center=419
+  pmvr.auto=20
+  pmvr.links=$THIS:FirstMasterBedroomLinks
+  FloorPlan.script=$THIS:FirstFloorMap
+  FloorPlan.x=53
+  FloorPlan.y=280
+
+[SecondMasterBedroom]
+  Label.text=The Idyll Mouse -- Second Master Bedroom
+  pmvr.image=images/secondmasterbedroom.jpg
+  pmvr.view=360
+  pmvr.pixdeg=0=29,2745=29
+  pmvr.center=373
+  pmvr.auto=20
+  pmvr.links=$THIS:SecondMasterBedroomLinks
+  FloorPlan.script=$THIS:FirstFloorMap
+  FloorPlan.x=195
+  FloorPlan.y=325
+
+[ThirdBedroom]
+  Label.text=The Idyll Mouse -- Third / Safari Bedroom
+  pmvr.image=images/thirdbedroom.jpg
+  pmvr.view=360
+  pmvr.pixdeg=0=290,2734=290
+  pmvr.center=2106
+  pmvr.auto=20
+  pmvr.links=$THIS:ThirdBedroomLinks
+  FloorPlan.script=$THIS:FirstFloorMap
+  FloorPlan.x=51
+  FloorPlan.y=340
+
+[FourthBedroom]
+  Label.text=The Idyll Mouse -- Fourth / Children's Bedroom
+  pmvr.image=images/fourthbedroom.jpg
+  pmvr.view=360
+  pmvr.pixdeg=0=221,2737=221
+  pmvr.center=157
+  pmvr.auto=20
+  pmvr.links=$THIS:FourthBedroomLinks
+  FloorPlan.script=$THIS:FirstFloorMap
+  FloorPlan.x=53
+  FloorPlan.y=459
+
+[FirstFloorMap]
+  image=images/floorplan.gif
+  links=$THIS:FloorPlanMapLinks
+
+[FloorPlanMapLinks]
+ pts=15,219,90,303	href=set:script=$THIS:FirstMasterBedroom	desc=First Master Bedroom
+ pts=170,305,243,368	href=set:script=$THIS:SecondMasterBedroom	desc=Second Master Bedroom
+ pts=15,306,90,369	href=set:script=$THIS:ThirdBedroom	desc=Third Bedroom
+ pts=15,432,79,489	href=set:script=$THIS:FourthBedroom	desc=Fourth Bedroom
+ pts=82,393,123,418	href=set:script=$THIS:MainEntry	desc=Main Entry
+ pts=94,283,166,335	href=set:script=$THIS:DiningArea	desc=Dining Area
+ pts=94,193,181,274	href=set:script=$THIS:LivingRoom	desc=Living Room
+ pts=185,147,243,193	href=set:script=$THIS:Dinette	desc=Dinette
+ pts=185,196,243,270	href=set:script=$THIS:Kitchen	desc=Kitchen
+ pts=19,5,240,141	href=set:script=$THIS:OutsidePool	desc=Pool
+
+[OutsidePoolLinks]
+  pts=2345,427,2347,96,2464,118,2461,409	href=set:script=$THIS:Dinette	desc=Dinette
+  pts=78,133,329,145,325,382,78,378	href=set:script=$THIS:LivingRoom	desc=Living Room
+  pts=432,138,484,123,483,416,429,398	href=set:script=$THIS:FirstMasterBedroom	desc=First Master Bedroom
+
+[MainEntryLinks]
+  pts=1892,477,1891,114,1992,58,1994,499	href=set:script=$THIS:ThirdBedroom	desc=Third Bedroom
+  pts=2355,370,2355,155,2567,155,2567,284,2466,284,2466,370	href=set:script=$THIS:LivingRoom	desc=LivingRoom
+  pts=2479,290,2577,290,2577,442,2479,442	href=set:script=$THIS:DiningArea	desc=Dining Area
+  pts=1695,103,1762,500	href=set:script=$THIS:FourthBedroom	desc=Fourth Bedroom
+
+[DiningAreaLinks]
+  pts=1833,97,2018,88,2021,499,1834,498	href=set:script=$THIS:FirstMasterBedroom	desc=First Master Bedroom
+  pts=2192,499,2193,393,2528,293,2766,297,2793,375,3030,382,3091,420,3097,445,3111,465,3100,500	href=set:script=$THIS:LivingRoom	desc=Living Room
+  pts=118,352,118,195,180,198,181,352	href=set:script=$THIS:Dinette	desc=Dinette
+  pts=311,387,313,207,395,205,396,405	href=set:script=$THIS:Kitchen	desc=Kitchen
+  pts=505,426,508,166,528,127,552,104,583,110,601,131,608,156,602,460	href=set:script=$THIS:SecondMasterBedroom	desc=Second Master Bedroom
+  pts=1283,205,1419,371	href=set:script=$THIS:MainEntry	desc=Main Entry
+
+[KitchenLinks]
+  pts=2700,498,2702,306,2556,302,2558,80,2708,102,2854,143,2985,85,2985,335,2924,344,2923,498	href=set:script=$THIS:Dinette	desc=Dinette
+  pts=1711,1876	href=set:script=$THIS:LivingRoom	desc=Living Room
+
+[DinetteLinks]
+  pts=1802,176,2241,498	href=set:script=$THIS:Kitchen	desc=Kitchen
+  pts=2502,311,2700,376,2696,107,2502,126	href=set:script=$THIS:LivingRoom	desc=Living Room
+  pts=277,498,273,89,396,126,396,442	href=set:script=$THIS:OutsidePool	desc=Pool
+
+[LivingRoomLinks]
+  pts=1352,467,1350,114,1579,157,1578,451,1466,466	href=set:script=$THIS:Dinette	desc=Dinette
+  pts=1880,90,2056,497	href=set:script=$THIS:Kitchen	desc=Kitchen
+  pts=2302,391,2301,177,2333,175,2338,202,2333,421	href=set:script=$THIS:SecondMasterBedroom	desc=Second Master Bedroom
+  pts=2466,256,2635,377	href=set:script=$THIS:DiningArea	desc=Dining Area
+  pts=92,357,91,169,129,138,178,151,177,338	href=set:script=$THIS:FirstMasterBedroom	desc=First Master Bedroom
+  pts=2638,239,2705,333	href=set:script=$THIS:MainEntry	desc=Main Entry
+  pts=861,135,1211,381	href=set:script=$THIS:OutsidePool	desc=Outside Pool
+
+[FirstMasterBedroomLinks]
+  pts=1948,2208	href=set:script=$THIS:DiningArea	desc=Dining Area
+
+[SecondMasterBedroomLinks]
+  pts=2279,113,2395,493	href=set:script=$THIS:LivingRoom	desc=Living Room
+
+[ThirdBedroomLinks]
+  pts=1727,123,1794,483	href=set:script=$THIS:MainEntry	desc=Main Entry
+  pts=1835,173,1882,407	href=set:script=$THIS:FourthBedroom	desc=Fourth Bedroom
+
+[FourthBedroomLinks]
+  pts=1081,90,1187,380	href=set:script=$THIS:MainEntry	desc=Main Entry
+
